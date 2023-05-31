@@ -325,8 +325,4 @@ void jsd_egd_async_sdo_set_ctrl_gain_scheduling_mode(
     jsd_t* self, uint16_t slave_id, jsd_elmo_gain_scheduling_mode_t mode,
     uint16_t app_id);
 
-#ifdef __cplusplus
-}
-#endif
-
-#endif
+ 
