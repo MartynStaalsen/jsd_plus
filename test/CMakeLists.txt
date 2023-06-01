@@ -91,11 +91,16 @@ if(BUILD_JSD_TESTS)
         jsd_test_utils.c)
     target_link_libraries(jsd_ati_fts_test ${jsd_test_libs})
 
+    add_executable(jsd_el3004_test
+            device/jsd_el3004_test.c
+            jsd_test_utils.c)
+    target_link_libraries(jsd_el3004_test ${jsd_test_libs})
+
     add_executable(jsd_el3104_test
             device/jsd_el3104_test.c
             jsd_test_utils.c)
     target_link_libraries(jsd_el3104_test ${jsd_test_libs})
-
+    
     add_executable(jsd_el3318_test
             device/jsd_el3318_test.c
             jsd_test_utils.c)

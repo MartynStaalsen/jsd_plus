@@ -28,6 +28,9 @@ typedef struct {
           overrange[JSD_EL3004_NUM_CHANNELS];  ///< True if measuring range exceeded
   uint8_t error[JSD_EL3004_NUM_CHANNELS];  ///< True if channel is over or under
                                            ///< range
+  uint8_t
+          txPDO_state[JSD_EL3004_NUM_CHANNELS];  ///< 0 - data is valid, 1 otherwise
+  uint8_t txPDO_toggle[JSD_EL3004_NUM_CHANNELS];  ///< toggled on new data
 } jsd_el3004_state_t;
 
 #ifdef __cplusplus
