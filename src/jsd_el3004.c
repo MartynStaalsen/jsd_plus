@@ -85,37 +85,10 @@ int jsd_el3004_PO2SO_config(ecx_contextt* ecx_context, uint16_t slave_id) {
                                   &reset_word)) {
     return 0;
   }
-
+  
   MSG("Configuring slave no: %u, SII inferred name: %s", slave_id,
       ecx_context->slavelist[slave_id].name);
   MSG("\t Configured name: %s", config->name);
-
-  for (int ch = 0; ch < JSD_EL3004_NUM_CHANNELS; ++ch) {
-    // Index for settings is 0x80n0, where n is channel number (e.g. ch2 =
-    // 0x8010).
-    /*
-    uint32_t sdo_channel_index = 0x8000 + (0x10 * ch);
-
-    // Don't need to set presentation as 2's compliment is the default,
-    // and we factor reset.
-    
-    // Enable digital filter on read inputs (synchronized with timer inside
-    // terminal).
-    uint8_t enable_filter = 1;
-    if (!jsd_sdo_set_param_blocking(ecx_context, slave_id, sdo_channel_index,
-                                    0x06, JSD_SDO_DATA_U8, &enable_filter)) {
-      return 0;
-    }
-
-    // Set filter option.
-    uint16_t filter_opt =
-        2;  // 1 kHz IIR filter, fastest rate. Refer to el30xen.pdf, page 269.
-    if (!jsd_sdo_set_param_blocking(ecx_context, slave_id, sdo_channel_index,
-                                    0x15, JSD_SDO_DATA_U16, &filter_opt)) {
-      return 0;
-    }
-    */
-  }
 
   config->PO2SO_success = true;
   return 1;
