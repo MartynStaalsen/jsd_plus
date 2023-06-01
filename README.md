@@ -73,6 +73,7 @@ most useful devices. The following table represents the latest state of the JSD 
 | EL3058                    | 3    | By Request Only              |
 | EL5101                    | 3    | By Request Only              |
 | EL6001                    | 3    | By Request Only              |
+| EL3004                    | ?    | ???????????????              |
 
 # Using JSD in your Project 
 For the software package to utilize JSD, an alternate way is to fetch JSD while building using FetchContent.
